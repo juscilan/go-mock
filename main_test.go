@@ -4,16 +4,15 @@ import (
 	"testing"
 
 	"github.com/juscilan/godeep/deep"
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )
 
 func TestMainExec(t *testing.T) {
 	t.Run("should return a string", func(t *testing.T) {
-		d := new(deep.Deep)
+		d := &deep.Deep{}
 		sut := CallDeep(d)
-		if sut == "" {
-			t.Errorf("Erro")
-		}
+		assert.NotEmpty(t, sut)
 	})
 }
 
